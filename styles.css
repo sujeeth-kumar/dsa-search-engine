@@ -1,23 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 /* Light Mode Variables (Default) */
+/* Dark Mode Variables (Now Default) */
 :root {
-  --bg-body: #f8fafc;
-  --bg-container: #ffffff;
-  --text-main: #1e293b;
-  --text-muted: #64748b;
-  --text-light: #94a3b8;
-  --border-color: #e2e8f0;
-  --border-input: #cbd5e1;
-  --bg-input: #f8fafc;
-  --bg-input-focus: #ffffff;
-  --card-hover-shadow: rgba(0, 0, 0, 0.08);
-  --featured-bg: linear-gradient(135deg, #eff6ff, #ffffff);
-  --featured-border: #bfdbfe;
-}
-
-/* Dark Mode Variables */
-[data-theme="dark"] {
   --bg-body: #0f172a;
   --bg-container: #1e293b;
   --text-main: #f8fafc;
@@ -30,6 +15,22 @@
   --card-hover-shadow: rgba(0, 0, 0, 0.3);
   --featured-bg: linear-gradient(135deg, #1e3a8a33, #1e293b);
   --featured-border: #1e40af;
+}
+
+/* Light Mode Variables (Applied via Toggle) */
+[data-theme="light"] {
+  --bg-body: #f8fafc;
+  --bg-container: #ffffff;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --text-light: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-input: #cbd5e1;
+  --bg-input: #f8fafc;
+  --bg-input-focus: #ffffff;
+  --card-hover-shadow: rgba(0, 0, 0, 0.08);
+  --featured-bg: linear-gradient(135deg, #eff6ff, #ffffff);
+  --featured-border: #bfdbfe;
 }
 
 body {

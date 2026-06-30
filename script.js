@@ -57,24 +57,30 @@ form.addEventListener("submit", async (e) => {
 });
 
 // --- Dark Mode Toggle Logic ---
+// --- Dark Mode Default Toggle Logic ---
 const themeToggle = document.getElementById("theme-toggle");
 
-// Check for saved preference, otherwise default to light
-const currentTheme = localStorage.getItem("theme") || "light";
-if (currentTheme === "dark") {
-  document.documentElement.setAttribute("data-theme", "dark");
-  themeToggle.textContent = "☀️";
+// Check for saved preference, default to dark mode if empty
+const currentTheme = localStorage.getItem("theme") || "dark";
+
+if (currentTheme === "light") {
+  document.documentElement.setAttribute("data-theme", "light");
+  themeToggle.textContent = "🌙"; // Show moon if they switched to light mode
+} else {
+  themeToggle.textContent = "☀️"; // Show sun by default for dark mode
 }
 
 themeToggle.addEventListener("click", () => {
-  let theme = "light";
-  if (document.documentElement.getAttribute("data-theme") !== "dark") {
-    document.documentElement.setAttribute("data-theme", "dark");
-    themeToggle.textContent = "☀️";
-    theme = "dark";
-  } else {
-    document.documentElement.removeAttribute("data-theme");
+  let theme = "dark";
+  // If we are currently in dark mode (no light attribute), switch to light
+  if (document.documentElement.getAttribute("data-theme") !== "light") {
+    document.documentElement.setAttribute("data-theme", "light");
     themeToggle.textContent = "🌙";
+    theme = "light";
+  } else {
+    // Otherwise, strip the light attribute to revert back to default dark
+    document.documentElement.removeAttribute("data-theme");
+    themeToggle.textContent = "☀️";
   }
   localStorage.setItem("theme", theme);
 });
