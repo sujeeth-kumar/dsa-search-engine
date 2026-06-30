@@ -14,19 +14,24 @@
   "author": "Sujeeth Kumar Chunarkar",
   "type": "module",
   "main": "index.js",
+  "engines": {
+    "node": ">=18"
+  },
   "scripts": {
     "scrape": "node scrape.js",
     "merge": "node utils/merge.js",
+    "build-index": "node utils/build-index.js",
     "dev": "nodemon index.js",
     "start": "node index.js"
   },
   "dependencies": {
+    "compression": "^1.7.5",
     "express": "^5.1.0",
-    "natural": "^8.1.0",
-    "puppeteer": "^24.10.2",
     "stopword": "^3.1.5"
   },
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "natural": "^8.1.1",
+    "nodemon": "^3.1.10",
+    "puppeteer": "^24.10.2"
   }
 }
