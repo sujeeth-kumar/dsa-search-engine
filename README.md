@@ -60,13 +60,13 @@ The dataset is scraped from **LeetCode** and **Codeforces** using **Puppeteer**,
 
 ---
 
-### Search Example – Trapping Rain Water
+### Search Example: Trapping Rain Water
 
 ![Search Results](assets/screenshots/trapping-rain-water.png)
 
 ---
 
-### Search Example – Climbing Stairs
+### Search Example: Climbing Stairs
 
 ![Search Results](assets/screenshots/climbing-stairs.png)
 
